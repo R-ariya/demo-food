@@ -1,0 +1,19 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let order of foodList;">
+    <mat-card class="content content-food">
+      <div class="box-img">
+        <img class="img-food" [src]="order.photo" alt="" srcset="">
+      </div>
+      <div class="food-detail">
+        <p class="title">{{order.name}}</p>
+        <p><strong>price : {{order.price}} ฿</strong></p>
+        <p>{{order.detail}}</p>
+        <p>
+          <mat-checkbox class="example-margin"
+            [disabled]="!order.flagOrder"
+            (change)="openInputDetail($event,order)">select!</mat-checkbox>
+        </p>
+      </div>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

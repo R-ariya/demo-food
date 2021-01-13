@@ -1,13 +1,15 @@
-import { FoodService } from './../service/food.service';
+import { FoodService } from './food.service';
 import { NgModule } from '@angular/core';
+import { HttpErrorInterceptor } from './http-error.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
-  imports: [],
+  imports: [FoodService],
   declarations: [],
-  exports: [],
+  exports: [FoodService],
   providers: [
-    FoodService,]
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }]
 })
 
 

@@ -1,0 +1,27 @@
+
+
+<section>
+  <p>
+    test {{foodOrder.length}}
+  </p>
+  <div *ngFor="let item of foodOrder; let i=index">
+    <div>
+      <strong>
+        {{i}}. {{item.name}}
+      </strong>
+      <ul>
+        <li *ngFor="let item of ingredient">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+    <p>
+      <label for="price">count : </label>
+      <span>{{item.count}}</span>
+    </p>
+    <p>
+      <label for="price">price : </label>
+      <span>{{item.price}} / 1</span>
+    </p>
+  </div>
+</section>

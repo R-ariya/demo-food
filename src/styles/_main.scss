@@ -1,5 +1,154 @@
 @import "./valiabels";
 
-.mat-primary {
+a {
+  color: $primary3;
+  border: none;
+}
+a:hover {
+  color: $primary4;
+  border: none;
+}
+mat-card {
+  background: #ffffff87 !important;
+}
+
+mat-spinner {
+  position: fixed !important;
+  left: 46%;
+  top: 50%;
+}
+
+.mg-s {
+  margin: 5px;
+}
+.mg-m {
+  margin: 10px;
+}
+.mg-l {
+  margin: 10px;
+}
+.tran {
+  background: #7fffd400 !important;
+  border: 0 !important;
+}
+.mat-toolbar.mat-primary {
   background: $primary !important;
+}
+.mat-primary {
+  color: $primary !important;
+}
+.title {
+  color: $white !important;
+}
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $primary !important;
+}
+
+.mat-checkbox-inner-container {
+  background: $primary !important;
+}
+.content {
+  display: contents;
+  align-content: center;
+}
+.content-food {
+  width: 40vw;
+  height: 200px;
+  color: $primary2;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.box-img {
+  width: 207px;
+  height: 200px;
+}
+
+.img-food {
+  width: 207px;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.food-detail {
+  margin: 15px;
+  position: absolute;
+  top: 0%;
+  left: 36%;
+  background: rgba(255, 255, 255, 0.687) !important;
+  border-radius: 5px;
+  padding: 5px;
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $primary3 !important;
+  }
+}
+textarea {
+  width: 198px !important;
+  height: 50px !important;
+}
+.cart {
+  background: #fff !important;
+  width: 23px !important;
+  height: 23px;
+  left: 93%;
+  transform: translateX(23px);
+  position: fixed !important;
+  top: 5px;
+  border-radius: 50px !important;
+  z-index: 2;
+  span {
+    text-align: end;
+    position: sticky !important;
+    z-index: 2;
+    transform: translateY(-12px);
+  }
+}
+
+.icon {
+  width: 23px;
+  height: 23px;
+}
+mat-drawer {
+  width: 400px;
+  top: 0%;
+}
+.fixed {
+  position: fixed !important;
+}
+.mat-drawer {
+  top: 64px !important;
+  background: #f58634;
+  margin: 5px;
+  border-radius: 9px;
+  margin-bottom: 4px;
+  padding: 15px;
+}
+.mat-drawer-container {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.hero-image {
+  background-image: url("../assets/bg.jpg");
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+}
+.grad1 {
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  background-color: #cccccc;
+  background-image: linear-gradient($primary, $primary4);
 }
