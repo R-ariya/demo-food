@@ -1,5 +1,231 @@
 @import "./valiabels";
 
-.mat-primary {
+a {
+  color: $primary3;
+  border: none;
+}
+a:hover {
+  color: $primary4;
+  border: none;
+}
+.title {
+  a {
+    color: $primary3;
+    border: none;
+  }
+  a:hover {
+    color: $primary2;
+    border: none;
+  }
+}
+mat-card {
+  margin: 15px;
+  background: #ffffff87 !important;
+}
+
+mat-spinner {
+  position: fixed !important;
+  left: 46%;
+  top: 50%;
+}
+
+.mg-s {
+  margin: 5px;
+}
+.mg-m {
+  margin: 10px;
+}
+.mg-l {
+  margin: 10px;
+}
+.tran {
+  background: #7fffd400 !important;
+  border: 0 !important;
+}
+mat-toolbar,
+.toolbar {
+  border-bottom: 0.1px solid rgb(0 0 0 / 27%);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.footter {
+  border-top: 0.1px solid rgb(0 0 0 / 27%);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.mat-toolbar.mat-primary {
   background: $primary !important;
+}
+.mat-toolbar.mat-secondary {
+  background: $primary4 !important;
+}
+.mat-primary {
+  color: $primary !important;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $primary !important;
+}
+
+.mat-checkbox-inner-container {
+  background: $primary !important;
+}
+.content {
+  display: contents;
+  align-content: center;
+}
+
+.content-food {
+  width: 40vw;
+  height: 200px;
+  color: $primary2;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.box-img {
+  width: 207px;
+  height: 200px;
+}
+
+.img-food {
+  width: 207px;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: $white;
+}
+
+.food-detail {
+  margin: 15px;
+  position: absolute;
+  top: 0%;
+  left: 36%;
+  background: rgba(255, 255, 255, 0.687) !important;
+  border-radius: 5px;
+  padding: 5px;
+  width: 18vw;
+  .title {
+    color: $primary3 !important;
+  }
+}
+.paragrap {
+  margin: 15px;
+  background: rgba(255, 255, 255, 0.687) !important;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80vw;
+  .title {
+    color: $primary2 !important;
+  }
+}
+.sub-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: $primary2 !important;
+}
+.detail {
+  font-size: 14px;
+  font-weight: 400;
+  color: $secondary !important;
+}
+textarea {
+  width: 198px !important;
+  height: 50px !important;
+}
+.cart {
+  background: #fff !important;
+  width: 23px !important;
+  height: 23px;
+  left: 93%;
+  transform: translateX(23px);
+  position: fixed !important;
+  top: 5px;
+  border-radius: 50px !important;
+  z-index: 2;
+  span {
+    text-align: end;
+    position: sticky !important;
+    z-index: 2;
+    transform: translateY(-12px);
+  }
+}
+
+.icon {
+  width: 23px;
+  height: 23px;
+}
+mat-drawer {
+  width: 400px;
+  top: 0%;
+}
+.fixed {
+  position: fixed !important;
+}
+.mat-drawer {
+  top: 64px !important;
+  background: #f58634;
+  margin: 5px;
+  border-radius: 9px;
+  margin-bottom: 4px;
+  padding: 15px;
+}
+.mat-drawer-container {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+.box-hero {
+  background-color: #cccccc;
+  width: fit-content;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+}
+.hero-image {
+  background-image: url("../assets/bg.jpg");
+
+  background-color: #cccccc;
+  height: 100ex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+}
+.grad1 {
+  padding: 0px;
+  margin: 0px;
+  padding: 15px;
+  // transform: translateY(-15px);
+  height: 100ex;
+  background-color: #cccccc;
+  background-image: linear-gradient($primary, $primary3);
+}
+.center {
+  position: absolute !important;
+  left: 6%;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.material-icons {
+  font-size: 30px !important;
+  margin: 3px;
+  cursor: pointer;
+}
+.cursor-d {
+  cursor: default !important;
 }
