@@ -9,6 +9,7 @@ a:hover {
   border: none;
 }
 mat-card {
+  margin: 15px;
   background: #ffffff87 !important;
 }
 
@@ -30,6 +31,12 @@ mat-spinner {
 .tran {
   background: #7fffd400 !important;
   border: 0 !important;
+}
+mat-toolbar,
+.toolbar {
+  border-bottom: 0.1px solid rgb(0 0 0 / 27%);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 .mat-toolbar.mat-primary {
   background: $primary !important;
@@ -83,6 +90,7 @@ mat-spinner {
   background: rgba(255, 255, 255, 0.687) !important;
   border-radius: 5px;
   padding: 5px;
+  width: 18vw;
   .title {
     font-size: 18px;
     font-weight: 600;
@@ -137,7 +145,7 @@ mat-drawer {
 .hero-image {
   background-image: url("../assets/bg.jpg");
   background-color: #cccccc;
-  height: 100vh;
+  height: 100ex;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -148,7 +156,9 @@ mat-drawer {
 .grad1 {
   padding: 0px;
   margin: 0px;
-  height: 100vh;
+  padding: 15px;
+  // transform: translateY(-15px);
+  height: 100ex;
   background-color: #cccccc;
-  background-image: linear-gradient($primary, $primary4);
+  background-image: linear-gradient($primary, $primary3);
 }

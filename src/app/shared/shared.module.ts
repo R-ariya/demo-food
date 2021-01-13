@@ -49,6 +49,7 @@ import { FoodOrderReviewComponent } from './components/food-order/food-order-rev
     HomeComponent,
     HeaderComponent,
     FoodOrderComponent,
+    FoodOrderReviewComponent
   ],
   entryComponents: [
 

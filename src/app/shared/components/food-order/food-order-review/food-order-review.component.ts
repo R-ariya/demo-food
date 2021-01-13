@@ -36,6 +36,7 @@ export class FoodOrderReviewComponent implements OnInit, OnDestroy {
     return this.ingredient;
   }
 
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
     this.subscriptionIngredient.unsubscribe()
