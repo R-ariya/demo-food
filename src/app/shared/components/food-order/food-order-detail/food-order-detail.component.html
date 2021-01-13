@@ -10,10 +10,13 @@
     <form [formGroup]="from" (ngSubmit)="onSubmit()">
       <input type="text" formControlName='id' hidden>
       <!-- <input type="text" formControlName='name' disabled> -->
-      <label for=""></label>
+
+
+
       <p *ngFor="let item of foodDetail.ingredient; let i=index">
         <mat-checkbox
-          [formControlName]="'ingredient' + (i+1)">
+          [formControlName]="'ingredient' + (i+1)"
+          (change)="onSelectIngredient($event,item.name,item.price)">
           {{ item.name + " +" + item.price}}
         </mat-checkbox>
       </p>
@@ -25,24 +28,30 @@
       <p>
         <label>order : </label>
         <input matInput type="number" placeholder="Ex. 5"
-          formControlName="count"
+          formControlName="count" (change)="onPriceChange()"
           min="1">
         <mat-error *ngIf="from.get('count').invalid">Min order: 1</mat-error>
+      </p>
+      <p>
+        <label>price : </label>
+        <input matInput type="number" placeholder="฿"
+          formControlName="priceTotal" disabled
+          min="1">
       </p>
 
     </form>
   </div>
 
   <div mat-dialog-actions>
-    <section>
-      <div class="example-button-row">
-        <button mat-button color="accent"
-          [mat-dialog-close]="from.value"
-          cdkFocusInitial>Add</button>
-        <!-- <button mat-button color="warn" (click)="onClose()">Cancle</button> -->
-      </div>
-    </section>
-
+    <div>
+      <button mat-button class="tran flex-center"
+        [mat-dialog-close]="from.value"
+        cdkFocusInitial>
+        <span class="material-icons">
+          add_circle_outline
+        </span>
+      </button>
+    </div>
   </div>
 
 </div>

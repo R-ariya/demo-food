@@ -6,20 +6,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
 
-  private foodOrderSource = new BehaviorSubject([]);
+  public foodOrder: any = []
+  private foodOrderSource = new BehaviorSubject(this.foodOrder);
   currentfoodOrder = this.foodOrderSource.asObservable();
-
-  private ingredientSource = new BehaviorSubject([]);
-  currentfIngredient = this.ingredientSource.asObservable();
 
   constructor() { }
 
-  changeFoodOrder(foodOrder: any[]) {
+  changeFoodOrder(foodOrder: any) {
     this.foodOrderSource.next(foodOrder)
   }
 
-  changeIngredient(ingredient: any[]) {
-    this.ingredientSource.next(ingredient)
-  }
 
 }

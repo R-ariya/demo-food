@@ -1,5 +1,4 @@
-import { OnDestroy } from '@angular/core/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { DataService } from 'src/app/service/data.service.js';
 import { FoodOrder } from "../../../../model/FoodModel.model.js";
 import { Subscription } from 'rxjs';
@@ -11,34 +10,28 @@ import { Subscription } from 'rxjs';
 })
 export class FoodOrderReviewComponent implements OnInit, OnDestroy {
 
-  foodOrder: any[] = [];
-  ingredient: any[] = [];
+  @Input()
+  set foodOrder(event: []) {
+    console.log("event", event)
+  }
 
-  subscription: Subscription;
-  subscriptionIngredient: Subscription;
+  public orderList: any[] = [];
+  public subscription: Subscription;
 
   constructor(private data: DataService) { }
 
-  async ngOnInit() {
-    this.subscription = await this.data.currentfoodOrder.subscribe(res => this.onChangeFoodOrder(res))
-    this.subscriptionIngredient = await this.data.currentfIngredient.subscribe(res => this.onChangeIngredien(res))
+  ngOnInit() {
+    this.subscription = this.data.currentfoodOrder.subscribe(res => {
+      this.setOrder(res)
+    })
   }
 
-  onChangeFoodOrder(value) {
-    this.foodOrder = value
-    console.log("onChangeOrder", this.foodOrder)
-    return this.foodOrder;
+  async setOrder(res) {
+    this.orderList = await Object.values(res)
+    console.log("orderList", this.orderList)
   }
-
-  onChangeIngredien(value) {
-    this.ingredient = value
-    console.log("onChangeOrder", this.ingredient)
-    return this.ingredient;
-  }
-
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-    this.subscriptionIngredient.unsubscribe()
   }
 }

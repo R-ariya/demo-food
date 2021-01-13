@@ -1,3 +1,4 @@
+import { StoryComponent } from './components/story/story.component';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -19,6 +20,7 @@ import { FoodOrderDetailComponent } from './components/food-order/food-order-det
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FoodResultListComponent } from './components/food-order/food-result-list/food-result-list.component';
 import { FoodOrderReviewComponent } from './components/food-order/food-order-review/food-order-review.component';
+import { FootterComponent } from './components/footter/footter.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FoodOrderReviewComponent } from './components/food-order/food-order-rev
     FoodOrderComponent,
     FoodOrderDetailComponent,
     FoodResultListComponent,
-    FoodOrderReviewComponent
+    FoodOrderReviewComponent,
+    StoryComponent,
+    FootterComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,9 @@ import { FoodOrderReviewComponent } from './components/food-order/food-order-rev
     HomeComponent,
     HeaderComponent,
     FoodOrderComponent,
-    FoodOrderReviewComponent
+    FoodOrderReviewComponent,
+    StoryComponent,
+    FootterComponent
   ],
   entryComponents: [
 

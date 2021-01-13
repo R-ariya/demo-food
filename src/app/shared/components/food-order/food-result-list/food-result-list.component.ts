@@ -25,7 +25,7 @@ export class FoodResultListComponent implements OnInit {
 
   async getFood() {
     await this.foodService.getFood().then(res => {
-      console.log(res)
+      // console.log(res)
       this.foodList = res;
     }
       , (error) => {
@@ -34,6 +34,7 @@ export class FoodResultListComponent implements OnInit {
   }
 
   openInputDetail(event, current) {
+
     if (event.checked) {
       const dialogRef = this.dialog.open(FoodOrderDetailComponent, {
         width: '250px',
@@ -41,7 +42,10 @@ export class FoodResultListComponent implements OnInit {
         {
           id: current.id,
           name: current.name,
+          price: current.price,
+          priceTotal: current.price,
           count: 0,
+          ingredient: [],
           ingredient1: false,
           ingredient2: false,
           ingredient3: false,
@@ -51,19 +55,19 @@ export class FoodResultListComponent implements OnInit {
       });
 
       dialogRef.afterClosed().subscribe(result => {
+        console.log(result)
         if (result) {
           this.foodOrder[result.id] = result
-          this.foodOrderOut.emit(this.foodOrder);
           current.isSelected = true
           current.count = result.count
           this.foodList[current.id] = current
-          this.foodListOut.emit(this.foodList);
+          this.emitFrom();
           // console.log("last order", this.foodOrder)
         } else {
           current.isSelected = false
           current.count = 0
           this.foodList[current.id] = current
-          this.foodListOut.emit(this.foodList);
+          this.emitFrom();
         }
       });
     } else {
@@ -74,10 +78,14 @@ export class FoodResultListComponent implements OnInit {
         }
       });
       this.foodOrder = newOrder
-      this.foodOrderOut.emit(this.foodOrder);
-      this.foodListOut.emit(this.foodList);
+      this.emitFrom();
       // console.log("last order", this.foodOrder)
     }
+  }
+
+  emitFrom() {
+    this.foodOrderOut.emit(this.foodOrder);
+    this.foodListOut.emit(this.foodList);
   }
 
 }

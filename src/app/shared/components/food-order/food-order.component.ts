@@ -1,5 +1,4 @@
-import { OnDestroy } from '@angular/core/core';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/service/data.service.js';
 import { FoodData } from "../../../model/FoodModel.model.js";
@@ -15,21 +14,28 @@ export class FoodOrderComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   foodListSelect: FoodData[] = [];
-  foodOrderList: any[] = [];
-  orderNow: Number = 0;
-
+  foodOrderList = [];
 
   ngOnInit() {
-    this.subscription = this.data.currentfoodOrder.subscribe(res => this.foodOrderList = res)
+    this.subscription = this.data.currentfoodOrder.subscribe(res => {
+      this.foodOrderList = res
+      // this.setSelect(res)
+    })
+  }
+
+  setSelect(res) {
+    res.forEach(element => {
+      this.foodListSelect[element.id].isSelected = true;
+    });
+    console.log(this.foodListSelect)
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  onChangeOrder(value) {
+  onChangeOrder(value: any[]) {
     this.foodOrderList = value
-    this.orderNow = this.foodOrderList.length
     this.data.changeFoodOrder(this.foodOrderList)
     // console.log("onChangeOrder", value)
   }

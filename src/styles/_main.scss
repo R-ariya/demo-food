@@ -8,6 +8,16 @@ a:hover {
   color: $primary4;
   border: none;
 }
+.title {
+  a {
+    color: $primary3;
+    border: none;
+  }
+  a:hover {
+    color: $primary2;
+    border: none;
+  }
+}
 mat-card {
   margin: 15px;
   background: #ffffff87 !important;
@@ -38,15 +48,21 @@ mat-toolbar,
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
+.footter {
+  border-top: 0.1px solid rgb(0 0 0 / 27%);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
 .mat-toolbar.mat-primary {
   background: $primary !important;
+}
+.mat-toolbar.mat-secondary {
+  background: $primary4 !important;
 }
 .mat-primary {
   color: $primary !important;
 }
-.title {
-  color: $white !important;
-}
+
 .mat-progress-spinner circle,
 .mat-spinner circle {
   stroke: $primary !important;
@@ -59,12 +75,12 @@ mat-toolbar,
   display: contents;
   align-content: center;
 }
+
 .content-food {
   width: 40vw;
   height: 200px;
   color: $primary2;
 }
-
 .example-container .mat-form-field + .mat-form-field {
   margin-left: 8px;
 }
@@ -82,6 +98,13 @@ mat-toolbar,
   background-size: cover;
   position: relative;
 }
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: $white;
+}
+
 .food-detail {
   margin: 15px;
   position: absolute;
@@ -92,10 +115,28 @@ mat-toolbar,
   padding: 5px;
   width: 18vw;
   .title {
-    font-size: 18px;
-    font-weight: 600;
     color: $primary3 !important;
   }
+}
+.paragrap {
+  margin: 15px;
+  background: rgba(255, 255, 255, 0.687) !important;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80vw;
+  .title {
+    color: $primary2 !important;
+  }
+}
+.sub-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: $primary2 !important;
+}
+.detail {
+  font-size: 14px;
+  font-weight: 400;
+  color: $secondary !important;
 }
 textarea {
   width: 198px !important;
@@ -141,9 +182,19 @@ mat-drawer {
 .mat-drawer-container {
   background-color: rgba(255, 255, 255, 0) !important;
 }
-
+.box-hero {
+  background-color: #cccccc;
+  width: fit-content;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+}
 .hero-image {
   background-image: url("../assets/bg.jpg");
+
   background-color: #cccccc;
   height: 100ex;
   background-position: center;
@@ -161,4 +212,20 @@ mat-drawer {
   height: 100ex;
   background-color: #cccccc;
   background-image: linear-gradient($primary, $primary3);
+}
+.center {
+  position: absolute !important;
+  left: 6%;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.material-icons {
+  font-size: 30px !important;
+  margin: 3px;
+  cursor: pointer;
+}
+.cursor-d {
+  cursor: default !important;
 }

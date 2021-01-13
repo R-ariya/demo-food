@@ -1,27 +1,26 @@
 
 
-<mat-card>
+
+
+<p class="title">
+  Order Now! {{orderList.length}}
+</p>
+
+<mat-card *ngFor="let item of orderList;">
+  <p class="sub-title">{{item.name}}</p>
   <p>
-    test {{foodOrder.length}}
+    <label for="count">Count : </label>
+    <span>{{item.count}}</span>
   </p>
-  <div *ngFor="let item of foodOrder; let i=index">
-    <div>
-      <strong>
-        {{i}}. {{item.name}}
-      </strong>
-      <ul>
-        <li *ngFor="let item of ingredient">
-          {{item}}
-        </li>
-      </ul>
-    </div>
-    <p>
-      <label for="price">count : </label>
-      <span>{{item.count}}</span>
-    </p>
-    <p>
-      <label for="price">price : </label>
-      <span>{{item.price}} / 1</span>
-    </p>
-  </div>
+  <p><strong>price : {{item.priceTotal}} ฿</strong></p>
+  <p *ngIf="item.ingredient.length>0">Topping : </p>
+  <ul>
+    <li *ngFor="let ingredient of item.ingredient;">
+      <span>{{ingredient}}</span>
+    </li>
+  </ul>
+  <p>
+    <label for="remark">Remark : </label>
+    <span>{{item.remark}}</span>
+  </p>
 </mat-card>
