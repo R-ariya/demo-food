@@ -3,16 +3,16 @@
 
 
 <p class="title">
-  Order Now! {{orderList.length}}
+  Food Order Now!
+  <strong> {{priceToltal}} ฿</strong>
 </p>
 
-<mat-card *ngFor="let item of orderList;">
+<mat-card class="paragrap" *ngFor="let item of orderList;">
   <p class="sub-title">{{item.name}}</p>
   <p>
     <label for="count">Count : </label>
     <span>{{item.count}}</span>
   </p>
-  <p><strong>price : {{item.priceTotal}} ฿</strong></p>
   <p *ngIf="item.ingredient.length>0">Topping : </p>
   <ul>
     <li *ngFor="let ingredient of item.ingredient;">
@@ -23,4 +23,5 @@
     <label for="remark">Remark : </label>
     <span>{{item.remark}}</span>
   </p>
+  <p>price : {{item.priceTotal}} ฿</p>
 </mat-card>

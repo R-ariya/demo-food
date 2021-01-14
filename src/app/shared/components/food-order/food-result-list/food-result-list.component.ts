@@ -25,7 +25,6 @@ export class FoodResultListComponent implements OnInit {
 
   async getFood() {
     await this.foodService.getFood().then(res => {
-      // console.log(res)
       this.foodList = res;
     }
       , (error) => {
@@ -34,7 +33,6 @@ export class FoodResultListComponent implements OnInit {
   }
 
   openInputDetail(event, current) {
-
     if (event.checked) {
       const dialogRef = this.dialog.open(FoodOrderDetailComponent, {
         width: '250px',
@@ -72,14 +70,15 @@ export class FoodResultListComponent implements OnInit {
       });
     } else {
       let newOrder = []
-      Object.keys(this.foodOrder).forEach(element => {
-        if (element != current.id) {
-          newOrder[element] = this.foodOrder[element]
+      this.foodOrder.forEach(element => {
+        // console.log(element.id, current.id, (element.id != current.id))
+        if (element.id != current.id) {
+          newOrder.push(element)
         }
       });
       this.foodOrder = newOrder
+      console.log("last order", this.foodOrder)
       this.emitFrom();
-      // console.log("last order", this.foodOrder)
     }
   }
 

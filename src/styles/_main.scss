@@ -1,26 +1,61 @@
 @import "./valiabels";
-
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Raleway:wght@100&family=Source+Code+Pro:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 a {
-  color: $primary3;
-  border: none;
+  color: $primary2;
+  text-decoration: unset;
+  font-size: 16px;
+  font-weight: 500;
 }
 a:hover {
-  color: $primary4;
-  border: none;
+  font-weight: 600;
+  color: $primary3;
 }
-.title {
+.title,
+.title-header {
+  font-family: "Patrick Hand", cursive;
+  font-size: 24px;
+  font-weight: 600;
+  color: $white;
   a {
-    color: $primary3;
-    border: none;
+    color: $primary4;
   }
   a:hover {
-    color: $primary2;
-    border: none;
+    color: $primary3;
   }
+  strong {
+    color: $primary1;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+span,
+a,
+p,
+b,
+u,
+li,
+h3,
+h4,
+label,
+h5 {
+  font-family: "Nunito", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Patrick Hand", cursive;
+}
+
+.title-header {
+  margin: 15px !important;
+}
+mat-menu {
+  background-color: $primary2 !important;
 }
 mat-card {
   margin: 15px;
-  background: #ffffff87 !important;
+  background: #0000001c !important;
 }
 
 mat-spinner {
@@ -38,27 +73,34 @@ mat-spinner {
 .mg-l {
   margin: 10px;
 }
+
 .tran {
   background: #7fffd400 !important;
   border: 0 !important;
 }
+
 mat-toolbar,
 .toolbar {
   border-bottom: 0.1px solid rgb(0 0 0 / 27%);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
+
 .footter {
   border-top: 0.1px solid rgb(0 0 0 / 27%);
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
+
 .mat-toolbar.mat-primary {
-  background: $primary !important;
+  background: $primary2 !important;
+  // background-image: linear-gradient($primary, $primary3) !important;
 }
+
 .mat-toolbar.mat-secondary {
-  background: $primary4 !important;
+  background: $primary2 !important;
 }
+
 .mat-primary {
   color: $primary !important;
 }
@@ -71,16 +113,12 @@ mat-toolbar,
 .mat-checkbox-inner-container {
   background: $primary !important;
 }
+
 .content {
   display: contents;
   align-content: center;
 }
 
-.content-food {
-  width: 40vw;
-  height: 200px;
-  color: $primary2;
-}
 .example-container .mat-form-field + .mat-form-field {
   margin-left: 8px;
 }
@@ -96,13 +134,8 @@ mat-toolbar,
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 6px;
   position: relative;
-}
-
-.title {
-  font-size: 18px;
-  font-weight: 600;
-  color: $white;
 }
 
 .food-detail {
@@ -115,7 +148,13 @@ mat-toolbar,
   padding: 5px;
   width: 18vw;
   .title {
-    color: $primary3 !important;
+    color: $primary2 !important;
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+  }
+  p {
+    color: $secondary !important;
   }
 }
 .paragrap {
@@ -125,25 +164,38 @@ mat-toolbar,
   padding: 5px;
   width: 80vw;
   .title {
+    font-size: 20px;
     color: $primary2 !important;
   }
 }
+
 .sub-title {
-  font-size: 16px;
-  font-weight: 500;
+  // padding: 16px;
+  font-weight: 800 !important;
+  font-size: 18px !important;
   color: $primary2 !important;
+  font-family: "Nunito", sans-serif !important;
 }
 .detail {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  font-family: "Nunito", sans-serif !important;
   color: $secondary !important;
 }
 textarea {
+  font-family: "Nunito", sans-serif !important;
   width: 198px !important;
   height: 50px !important;
 }
+
+.content-food {
+  width: 40vw;
+  height: 200px;
+  color: $primary2;
+}
+
 .cart {
-  background: #fff !important;
+  background: $white !important;
   width: 23px !important;
   height: 23px;
   left: 93%;
@@ -153,10 +205,11 @@ textarea {
   border-radius: 50px !important;
   z-index: 2;
   span {
-    text-align: end;
-    position: sticky !important;
-    z-index: 2;
-    transform: translateY(-12px);
+    transform: translateY(-10px);
+    position: fixed;
+    color: $primary1;
+    font-size: 14px;
+    font-weight: 600;
   }
 }
 
@@ -164,53 +217,58 @@ textarea {
   width: 23px;
   height: 23px;
 }
+
 mat-drawer {
   width: 400px;
   top: 0%;
 }
+
 .fixed {
   position: fixed !important;
 }
+
 .mat-drawer {
   top: 64px !important;
-  background: #f58634;
+  background: #00000057;
   margin: 5px;
   border-radius: 9px;
   margin-bottom: 4px;
   padding: 15px;
 }
+
 .mat-drawer-container {
   background-color: rgba(255, 255, 255, 0) !important;
 }
+
 .box-hero {
-  background-color: #cccccc;
+  background-color: $gray;
   width: fit-content;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  border-radius: 9px;
   padding: 0px;
   margin: 0px;
 }
+
 .hero-image {
   background-image: url("../assets/bg.jpg");
-
-  background-color: #cccccc;
+  background-color: $gray;
   height: 100ex;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 0px;
+  padding: 35px;
   margin: 0px;
 }
 .grad1 {
   padding: 0px;
   margin: 0px;
   padding: 15px;
-  // transform: translateY(-15px);
   height: 100ex;
-  background-color: #cccccc;
+  background-color: $gray;
   background-image: linear-gradient($primary, $primary3);
 }
 .center {
@@ -221,11 +279,14 @@ mat-drawer {
   display: flex;
   justify-content: center;
 }
+.text-center {
+  text-align: center;
+}
+.cursor-d {
+  cursor: default !important;
+}
 .material-icons {
   font-size: 30px !important;
   margin: 3px;
   cursor: pointer;
-}
-.cursor-d {
-  cursor: default !important;
 }

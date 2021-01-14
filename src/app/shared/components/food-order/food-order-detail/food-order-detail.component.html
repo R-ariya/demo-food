@@ -2,7 +2,7 @@
 
 
 
-<h1 mat-dialog-title>Order {{data.name}}</h1>
+<h1 mat-dialog-title class="text-center sub-title">{{data.name}}</h1>
 <div mat-dialog-content>
   <mat-spinner *ngIf="loading"></mat-spinner>
 
@@ -10,17 +10,13 @@
     <form [formGroup]="from" (ngSubmit)="onSubmit()">
       <input type="text" formControlName='id' hidden>
       <!-- <input type="text" formControlName='name' disabled> -->
-
-
-
       <p *ngFor="let item of foodDetail.ingredient; let i=index">
         <mat-checkbox
           [formControlName]="'ingredient' + (i+1)"
           (change)="onSelectIngredient($event,item.name,item.price)">
-          {{ item.name + " +" + item.price}}
+          {{ item.name }} {{item.price}}฿
         </mat-checkbox>
       </p>
-
       <p>
         <textarea matInput placeholder="remark" formControlName="remark"></textarea>
       </p>

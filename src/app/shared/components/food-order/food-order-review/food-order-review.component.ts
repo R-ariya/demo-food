@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from 'src/app/service/data.service.js';
 import { FoodOrder } from "../../../../model/FoodModel.model.js";
 import { Subscription } from 'rxjs';
@@ -10,13 +10,9 @@ import { Subscription } from 'rxjs';
 })
 export class FoodOrderReviewComponent implements OnInit, OnDestroy {
 
-  @Input()
-  set foodOrder(event: []) {
-    console.log("event", event)
-  }
-
   public orderList: any[] = [];
   public subscription: Subscription;
+  public priceToltal;
 
   constructor(private data: DataService) { }
 
@@ -28,7 +24,11 @@ export class FoodOrderReviewComponent implements OnInit, OnDestroy {
 
   async setOrder(res) {
     this.orderList = await Object.values(res)
+    this.priceToltal = 0.00
     console.log("orderList", this.orderList)
+    this.orderList.forEach(element => {
+      this.priceToltal = this.priceToltal + element.priceTotal
+    });
   }
 
   ngOnDestroy() {

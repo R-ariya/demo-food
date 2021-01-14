@@ -5,13 +5,13 @@
   (click)="reviewOrder.toggle()">
   <img src="../../../../assets/shopping-cart.svg" alt="" srcset=""
     class="icon">
-  <!-- <span> {{orderNow}}</span> -->
+  <span> {{foodOrderList.length}}</span>
 </mat-card>
 
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer position="end" #reviewOrder class="fixed example-sidenav"
     mode="side">
-    <app-food-order-review [foodOrder]="foodOrderList"></app-food-order-review>
+    <app-food-order-review></app-food-order-review>
   </mat-drawer>
   <div class="example-sidenav-content">
     <app-food-result-list (foodListOut)="foodListSelect"

@@ -9,24 +9,20 @@ import { FoodData } from "../../../model/FoodModel.model.js";
   styleUrls: ['./food-order.component.scss']
 })
 export class FoodOrderComponent implements OnInit, OnDestroy {
-
   constructor(private data: DataService) { }
-  subscription: Subscription;
 
-  foodListSelect: FoodData[] = [];
-  foodOrderList = [];
+  public foodListSelect: FoodData[] = [];
+  public foodOrderList = [];
+  public subscription: Subscription;
 
   ngOnInit() {
     this.subscription = this.data.currentfoodOrder.subscribe(res => {
-      this.foodOrderList = res
-      // this.setSelect(res)
+      this.setSelect(Object.values(res))
     })
   }
 
   setSelect(res) {
-    res.forEach(element => {
-      this.foodListSelect[element.id].isSelected = true;
-    });
+    this.foodOrderList = res
     console.log(this.foodListSelect)
   }
 
