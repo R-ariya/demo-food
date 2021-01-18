@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Raleway:wght@100&family=Source+Code+Pro:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
 a {
-  color: $primary2;
+  color: $primary;
   text-decoration: unset;
   font-size: 16px;
   font-weight: 500;
@@ -56,6 +56,7 @@ mat-menu {
 mat-card {
   margin: 15px;
   background: #0000001c !important;
+  width: max-content;
 }
 
 mat-spinner {
@@ -127,16 +128,25 @@ mat-toolbar,
 .food-detail {
   background: rgba(255, 255, 255, 0.687) !important;
   border-radius: 5px;
-  padding: 5px;
-  width: 18vw;
+  width: 230px;
+  margin: 5px;
+  height: 123px;
+  p {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    color: $secondary !important;
+  }
+  .detail {
+    height: 27px;
+    font-size: 14px;
+  }
   .title {
+    padding: 8px;
     color: $primary2 !important;
     font-size: 16px;
     font-family: "Nunito", sans-serif;
     font-weight: 800;
-  }
-  p {
-    color: $secondary !important;
   }
 }
 
@@ -157,7 +167,7 @@ mat-toolbar,
   width: 80vw;
   .title {
     font-size: 20px;
-    color: $primary2 !important;
+    color: $primary !important;
   }
 }
 
@@ -169,8 +179,8 @@ mat-toolbar,
   font-family: "Nunito", sans-serif !important;
 }
 .detail {
-  font-size: 16px !important;
-  font-weight: 400 !important;
+  font-size: 16px;
+  font-weight: 400;
   font-family: "Nunito", sans-serif !important;
   color: $secondary !important;
 }
@@ -178,12 +188,6 @@ textarea {
   font-family: "Nunito", sans-serif !important;
   width: 198px !important;
   height: 50px !important;
-}
-
-.content-food {
-  // width: 40vw;
-  height: 200px;
-  color: $primary2;
 }
 
 mat-drawer {
@@ -230,14 +234,14 @@ img {
 }
 .tumnail {
   width: 230px;
-  height: 185px;
+  height: 200px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   border-radius: 9px;
   padding: 0px;
-  margin: 15px;
+  margin: 5px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
