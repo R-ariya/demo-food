@@ -5,10 +5,11 @@
   <p class="title-header text-center">
     One Piece Themed Menu
   </p>
-  <mat-grid-tile *ngFor="let order of foodList;">
+  <mat-grid-tile *ngFor="let order of foodList;let i=index">
     <mat-card class="content content-food">
-      <div class="box-img">
-        <img class="img-food" [src]="order.photo" alt="" srcset="">
+      <div class="tumnail" [id]="'food-tumnail'+i">
+        <!-- <img  [src]="order.photo" alt="" srcset=""> -->
+        <div>{{setImg('food-tumnail'+i,order.photo)}}</div>
       </div>
       <div class="food-detail">
         <p class="title">{{order.name}}</p>

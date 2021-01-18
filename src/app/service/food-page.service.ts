@@ -1,6 +1,6 @@
 import { FoodService } from '../api/food.service';
 import { Injectable } from '@angular/core';
-
+import { FoodResponse, FoodOrderRequest } from '../model/FoodModel.model.js';
 @Injectable({
   providedIn: 'root'
 })

@@ -1,8 +1,4 @@
-export class Header {
-  code = String;
-  desc = String;
-  serviceName = String;
-}
+import { HeaderRs,HeaderRq } from './Base.model';
 
 export class FoodData {
   id = String;
@@ -18,6 +14,7 @@ export class FoodData {
     }
   ]
 }
+
 export class FoodOrder {
   id = String;
   price = Number;
@@ -29,6 +26,24 @@ export class FoodOrder {
 }
 
 export class FoodResponse {
-  headerRs = Header;
+  headerRs = HeaderRs;
   bodyRs = List[FoodData];
+}
+
+export class FoodOrderRequest {
+  headerRq = HeaderRq;
+  bodyRq = List[
+    {
+      id = String,
+      name = String,
+      remark = String,
+      count = String,
+      ingredient = [
+        {
+          id:String,
+          name:String,
+        }
+      ]
+    }
+  ];
 }

@@ -4,7 +4,6 @@ import { environment } from '../../environments/environment';
 import { FoodResponse } from "../model/FoodModel.model.js";
 import { map } from 'rxjs/operators';
 
-const basePath = environment.apiUrl;
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +13,7 @@ export class FoodService {
 
   getFood() {
     return this.http
-      .get(`${basePath}/getFood`)
+      .get(`${environment.apiUrl}/getFood`)
       .pipe(
         map((response: FoodResponse) => {
           return response.bodyRs;
@@ -26,7 +25,7 @@ export class FoodService {
 
   getFoodDetail(idFood: String) {
     return this.http
-      .get(`${basePath}/getFoodDetail/${idFood}`)
+      .get(`${environment.apiUrl}/getFoodDetail/${idFood}`)
       .pipe(
         map((response: FoodResponse) => {
           return response.bodyRs;

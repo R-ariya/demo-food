@@ -30,6 +30,21 @@ export class FoodResultListComponent implements OnInit {
       , (error) => {
         console.log(error)
       });
+
+
+
+  }
+
+  setImg(id, path) {
+    // let item = document.getElementsByClassName('tumnail')
+    // for (let index = 0; index < this.foodList.length; index++) {
+    //   const element = this.foodList[index];
+    let item = document.getElementById(id)
+    if (path && item) {
+      document.getElementById(id).style.backgroundImage = `url('${path}')`;
+      console.log(document.getElementById(id).style)
+    }
+    // }
   }
 
   openInputDetail(event, current) {
@@ -86,5 +101,6 @@ export class FoodResultListComponent implements OnInit {
     this.foodOrderOut.emit(this.foodOrder);
     this.foodListOut.emit(this.foodList);
   }
+
 
 }
